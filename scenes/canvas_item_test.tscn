@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdis8d0hm4ra0"]
+
+[ext_resource type="Texture2D" uid="uid://8dtxr4w7jhwc" path="res://icon.svg" id="1_n4wje"]
+[ext_resource type="Shader" uid="uid://b075u3npedn1l" path="res://shaders/rounded_pixel_outline.gdshader" id="1_obnrv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvxyf"]
+shader = ExtResource("1_obnrv")
+shader_parameter/out_of_bounds = true
+shader_parameter/outline_thickness = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[node name="CanvasItemTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+material = SubResource("ShaderMaterial_pvxyf")
+layout_mode = 2
+texture = ExtResource("1_n4wje")

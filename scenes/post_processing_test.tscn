@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxyqo2s605o44"]
+
+[ext_resource type="Texture2D" uid="uid://buu1w3bohev20" path="res://assets/mockupcathedralcrop.png" id="1_vpxm2"]
+[ext_resource type="Shader" uid="uid://ie7pgv8j0cbw" path="res://shaders/chromatic_aberration_vignette.gdshader" id="2_vpxm2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ajkbq"]
+shader = ExtResource("2_vpxm2")
+shader_parameter/effect_intensity = 4.0
+shader_parameter/vignette_radius = 1.0
+shader_parameter/falloff_size = 0.2
+
+[node name="PostProcessTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vpxm2")
+
+[node name="PostProcess" type="ColorRect" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_ajkbq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

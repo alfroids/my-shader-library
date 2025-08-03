@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://llbaxu6dbij1"]
+
+[ext_resource type="Texture2D" uid="uid://8dtxr4w7jhwc" path="res://icon.svg" id="1_gn7f8"]
+[ext_resource type="Shader" uid="uid://dgqffsga0gi2l" path="res://shaders/rounded_pixel_outline_canvas_group.gdshader" id="1_uitk3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yprca"]
+shader = ExtResource("1_uitk3")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[node name="CanvasGroupTest" type="Node2D"]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_yprca")
+
+[node name="Sprite1" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(937, 367)
+texture = ExtResource("1_gn7f8")
+
+[node name="Sprite2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(969, 411)
+texture = ExtResource("1_gn7f8")
+
+[node name="Sprite3" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(905, 440)
+texture = ExtResource("1_gn7f8")
